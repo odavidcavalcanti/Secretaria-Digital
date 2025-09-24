@@ -9,9 +9,8 @@ public class Professor extends Pessoa {
 
     }
 
-    public Professor(String nome, String email, String cpf, long numCadastro, String disciplina) {
+    public Professor(String nome, String email, String cpf, String disciplina) {
         super(nome, email, cpf);
-        this.numCadastro = numCadastro;
         this.disciplina = disciplina;
     }
 
@@ -34,15 +33,6 @@ public class Professor extends Pessoa {
 
     // Métodos
     @Override
-    public void ativarCadastro() {
-        this.cadastroAtivo = true;
-    }
-
-    @Override
-    public void desativarCadastro() {
-        this.cadastroAtivo = false;
-    }
-
     public String toString() {
         return String.format(
                 "Nome do professor: %s%n" +
@@ -50,12 +40,10 @@ public class Professor extends Pessoa {
                         "CPF do professor: %s%n" +
                         "Número do cadastro: %d%n" +
                         "Disciplina: %s%n" +
-                        "Cadastro ativo: %b",
                 this.getNome(),
                 this.getEmail(),
                 this.getCpf(),
                 this.getNumCadastro(),
-                this.getDisciplina(),
-                this.isCadastroAtivo());
+                this.getDisciplina());
     }
 }
