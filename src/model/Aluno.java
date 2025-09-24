@@ -54,6 +54,7 @@ public class Aluno extends Pessoa {
     @Override
     public String toString() {
 
+        // Cria uma string de informações da turma para evitar NullPointerException
         String infoTurma = turma.getAnoLetivo() + " Ano " + turma.getSubdivisaoAno();
 
         return String.format(
@@ -68,7 +69,7 @@ public class Aluno extends Pessoa {
                 this.getEmail(),
                 this.getCpf(),
                 this.getNumMatricula(),
-                infoTurma,
+                infoTurma, // Atribuição das informações
                 this.getNota(),
                 this.getFaltas());
     }
