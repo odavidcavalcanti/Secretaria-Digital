@@ -14,12 +14,14 @@ public class TurmaController {
         this.turmaView = turmaView;
     }
 
+    // Metodo para cadastrar turma
     public void cadastrarTurma(int anoLetivo, char subdivisaoAno) {
         Turma turma = new Turma(anoLetivo, subdivisaoAno);
         turmaService.cadatrarTurma(turma);
         turmaView.mostrarMensagem("Turma Cadastrada com sucesso!");
     }
 
+    // Metodo para listar turmas
     public void listarTurmas() {
         turmaView.listarTurmas(turmaService.listarTurmas());
     }

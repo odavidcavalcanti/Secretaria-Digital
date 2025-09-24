@@ -26,6 +26,7 @@ public class AlunoController {
         alunoView.mostrarMensagem("Aluno adicionado com sucesso!");
     }
 
+    // Metodo para listar os alunos
     public void listarAlunos() {
         alunoView.mostrarAlunos(alunoService.listarAlunos());
     }

@@ -5,7 +5,6 @@ public class Aluno extends Pessoa {
     private float nota;
     private int faltas;
     private Turma turma;
-
     // Construtores
     public Aluno() {
 
@@ -54,19 +53,22 @@ public class Aluno extends Pessoa {
     // Métodos
     @Override
     public String toString() {
+
+        String infoTurma = turma.getAnoLetivo() + " Ano " + turma.getSubdivisaoAno();
+
         return String.format(
                 "Nome do aluno: %s%n" +
                         "E-mail do aluno: %s%n" +
                         "CPF do aluno: %s%n" +
                         "Número da matrícula: %d%n" +
-                        "Turma: %s" + " Ano " + "%c%n" +
+                        "Turma: %s%n" +
                         "Nota do aluno: %.1f%n" +
-                        "Faltas do aluno: %d%n" +
+                        "Faltas do aluno: %d%n",
                 this.getNome(),
                 this.getEmail(),
                 this.getCpf(),
                 this.getNumMatricula(),
-                this.getTurma().getAnoLetivo(), this.getTurma().getSubdivisaoAno(),
+                infoTurma,
                 this.getNota(),
                 this.getFaltas());
     }
