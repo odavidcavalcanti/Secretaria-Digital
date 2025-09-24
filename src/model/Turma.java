@@ -29,4 +29,11 @@ public class Turma {
     public void setSubdivisaoAno(char subdivisaoAno) {
         this.subdivisaoAno = subdivisaoAno;
     }
+
+    public String toString() {
+        return String.format(
+                "Turma %d Ano %c",
+                this.getAnoLetivo(),
+                this.getSubdivisaoAno());
+    }
 }

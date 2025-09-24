@@ -24,6 +24,10 @@ public class Aluno extends Pessoa {
         return numMatricula;
     }
 
+    public void setNumMatricula(long numMatricula) {
+        this.numMatricula = numMatricula;
+    }
+
     public float getNota() {
         return nota;
     }
