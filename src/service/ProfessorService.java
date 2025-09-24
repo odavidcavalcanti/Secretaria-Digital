@@ -13,16 +13,19 @@ public class ProfessorService {
     //Construtor
     public ProfessorService() {
         this.professores = new ArrayList<>();
-        this.proximoId = 1;
+        this.proximoId = 1L;
     }
 
     //Métodos
-    public void adicionarProfessor(Professor professor) {
+
+    // Cadastro de professores
+    public void cadastrarProfessor(Professor professor) {
         this.professores.add(professor);
         professor.setNumCadastro(proximoId++);
     }
 
+    // Listagem de professores
     public List<Professor> listarProfessores() {
-        return professores;
+        return this.professores;
     }
 }

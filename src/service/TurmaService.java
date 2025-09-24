@@ -7,25 +7,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TurmaService {
-    private List<Aluno> alunosDaTurma = new ArrayList<>();
-    private Turma turma;
+    private List<Turma> turmas;
+    private long proximoId;
 
     // Construtor
-    public TurmaService(Turma turma) {
-        this.alunosDaTurma = new ArrayList<>();
-        this.turma = turma;
+    public TurmaService() {
+        this.turmas = new ArrayList<>();
+        this.proximoId = 1L;
     }
 
     // Métodos
-    public void addAlunoTurma(Aluno aluno, Turma turma) {
-        if (aluno.getTurma().equals(turma)) {
-            this.alunosDaTurma.add(aluno);
+    public void cadatrarTurma(Turma turma) {
+        this.turmas.add(turma);
+        turma.setIdTurma(proximoId++);
         }
+
+        //Listagem das turmas
+        public List<Turma> listarTurmas() {
+        return this.turmas;
+        }
+
+        // Busca turma por Id
+        public Turma buscarTurma(long idTurma) {
+        for  (Turma turma : this.turmas) {
+            if(turma.getIdTurma() == idTurma) {
+                return turma;
+            }
+        }
+        return null;
+        }
+
     }
 
-    public List<Aluno> ListarAlunosDaTurma() {
-        return this.alunosDaTurma;
-    }
-
-}
 
