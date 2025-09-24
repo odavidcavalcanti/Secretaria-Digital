@@ -54,6 +54,8 @@ Secretaria-Digital/
 - **Scanner** - Interface de console para entrada de dados
 - **Coleção** - ArrayList para armazenar as coleções de classes
 
+ - **POO** - Criado seguindo o paradigma de orientação a objetos e utilizando os conceitos de encapsulamento, herança, polimofismo de sobreposição e tratametos de erro com try/catch
+
 ## 📥 Pré-requisitos
 
 - JDK 21 ou superior
