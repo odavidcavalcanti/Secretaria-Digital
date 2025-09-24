@@ -39,7 +39,7 @@ public class Professor extends Pessoa {
                         "E-mail do professor: %s%n" +
                         "CPF do professor: %s%n" +
                         "Número do cadastro: %d%n" +
-                        "Disciplina: %s%n" +
+                        "Disciplina: %s%n",
                 this.getNome(),
                 this.getEmail(),
                 this.getCpf(),

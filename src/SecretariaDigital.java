@@ -90,6 +90,8 @@ public class SecretariaDigital {
                 System.out.print("Disciplina: ");
                 String disciplina = sc.nextLine();
 
+                professorController.cadastrarProfessor(nome,  email, cpf, disciplina);
+
             }
 
             if (opcao == 3) {
