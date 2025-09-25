@@ -16,6 +16,53 @@ public class SecretariaDigital {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+                //Login
+
+        String loginUsuario = "";
+        String loginEmail = "";
+        String loginSenha = "";
+        String loginCargo = "";
+
+        boolean loginValido = false;
+
+        System.out.println("=== SISTEMA DE GESTÃO ESCOLAR ===");
+        System.out.println("=== LOGIN ===");
+
+        while (!loginValido) {
+            try {
+                System.out.print("Usuário: ");
+                loginUsuario = sc.nextLine();
+
+                System.out.print("Email: ");
+                loginEmail = sc.nextLine();
+                if (!loginEmail.contains("@")) {
+                    throw new Exception("Email inválido! Deve conter '@'.");
+                }
+
+                System.out.print("Senha: ");
+                loginSenha = sc.nextLine();
+                if (loginSenha.length() < 4) {
+                    throw new Exception("Senha inválida! Deve ter no mínimo 4 caracteres.");
+                }
+
+                System.out.print("Cargo (administrador/gerente/colaborador) ");
+                loginCargo = sc.nextLine();
+                if (!loginCargo.equalsIgnoreCase("administrador") &&
+                        !loginCargo.equalsIgnoreCase("gerente") &&
+                        !loginCargo.equalsIgnoreCase("colaborador")) {
+                    throw new Exception("Cargo inválido! Aceito apenas: administrador, gerente ou colaborador.");
+                }
+
+                loginValido = true;
+                System.out.println("\nBem-vindo, " + loginCargo + " " + loginUsuario + "!");
+                System.out.println("Acesso concedido ao sistema.\n");
+
+            } catch (Exception e) {
+                System.out.println("Erro: " + e.getMessage());
+                System.out.println("Tente novamente.\n");
+            }
+        }
+
         // Inicizalização das dependências
         AlunoService alunoService = new AlunoService();
         ProfessorService professorService = new ProfessorService();
