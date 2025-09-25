@@ -26,8 +26,9 @@ public class SecretariaDigital {
         boolean loginValido = false;
 
         System.out.println("=== SISTEMA DE GESTÃO ESCOLAR ===");
-        System.out.println("=== LOGIN ===");
+        System.out.println("=== INSIRA SEUS DADOS ===");
 
+        // Validações para acessar o menu
         while (!loginValido) {
             try {
                 System.out.print("Usuário: ");
@@ -35,24 +36,31 @@ public class SecretariaDigital {
 
                 System.out.print("Email: ");
                 loginEmail = sc.nextLine();
+
+                // Valida se e-mail contém @
                 if (!loginEmail.contains("@")) {
                     throw new Exception("Email inválido! Deve conter '@'.");
                 }
 
                 System.out.print("Senha: ");
                 loginSenha = sc.nextLine();
+
+                // Exige um mínimo de 4 caracteres na senha
                 if (loginSenha.length() < 4) {
                     throw new Exception("Senha inválida! Deve ter no mínimo 4 caracteres.");
                 }
 
                 System.out.print("Cargo (administrador/gerente/colaborador) ");
                 loginCargo = sc.nextLine();
+
+                // Valida se os cargo inserido está dentro das opções
                 if (!loginCargo.equalsIgnoreCase("administrador") &&
                         !loginCargo.equalsIgnoreCase("gerente") &&
                         !loginCargo.equalsIgnoreCase("colaborador")) {
                     throw new Exception("Cargo inválido! Aceito apenas: administrador, gerente ou colaborador.");
                 }
 
+                // Ao validar tudo, concede acesso
                 loginValido = true;
                 System.out.println("\nBem-vindo, " + loginCargo + " " + loginUsuario + "!");
                 System.out.println("Acesso concedido ao sistema.\n");
