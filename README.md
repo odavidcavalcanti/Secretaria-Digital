@@ -29,6 +29,28 @@ Secretaria-Digital/
 └── README.md
 ```
 
+### 🔐 Sistema de Autenticação
+
+**Acesso**
+
+- **Aceso** com validação de usuário, e-mail e senha
+
+- **Validações**  durante o aceso:
+
+- E-mail deve conter "@"
+
+- Senha mínima de 4 caracteres
+
+- Cargo deve ser entre as opções válidas
+
+**Fluxo de Acesso**
+
+- **Autenticação** obrigatória antes de acessar o sistema
+
+- **Validação** em tempo real dos dados inseridos
+
+- **Mensagens** personalizadas de boas-vindas por cargo
+
 ## ✅ Funcionalidades
 
 ### Cadastros
@@ -42,10 +64,12 @@ Secretaria-Digital/
 - Listar todas as turmas com seus dados
 
 ### 🔄 Fluxo de Trabalho
-1. Cadastrar turmas
-2. Cadastrar alunos vinculados às turmas existentes
-3. Cadastrar professores
-4. Consultar os dados cadastrados
+
+1. Login no sistema com credenciais válidas
+2. Cadastrar turmas
+3. Cadastrar alunos vinculados às turmas existentes
+4. Cadastrar professores
+5. Consultar os dados cadastrados
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -53,8 +77,9 @@ Secretaria-Digital/
 - **Padrão MVC** - Arquitetura do projeto
 - **Scanner** - Interface de console para entrada de dados
 - **Coleção** - ArrayList para armazenar as coleções de classes
+- **Validações** - Tratamentos de exceções com try/catch
 
- - **POO** - Criado seguindo o paradigma de orientação a objetos e utilizando os conceitos de encapsulamento, herança, polimofismo de sobreposição e tratametos de erro com try/catch
+ - **POO** - Criado seguindo o paradigma de orientação a objetos e utilizando os conceitos de encapsulamento, herança, polimofismo de sobreposição e tratametos de erro com try/catch para dados inválidos
 
 ## 📥 Pré-requisitos
 
@@ -89,9 +114,20 @@ java -cp bin SecretariaDigital
 
 ## 🎯 Como Usar
 
-Ao executar o sistema, você verá o menu principal:
+Ao executar o sistema, você irá inserir seus dados:
+```
+=== SISTEMA DE GESTÃO ESCOLAR ===
+=== INSIRA SEUS DADOS ===
+Usuário: [seu usuário]
+Email: [seu email]
+Senha: [sua senha]
+Cargo (administrador/gerente/colaborador): [seu cargo]
 
 ```
+Após isso será liberado o sistema:
+
+```
+
 === SISTEMA DE GESTÃO ESCOLAR ===
 1. Cadastrar Aluno
 2. Cadastrar Professor
@@ -101,16 +137,24 @@ Ao executar o sistema, você verá o menu principal:
 6. Listar Turmas
 0. Sair
 Escolha uma opção:
-```
+
+````
 
 ### Exemplo de Uso:
 
-1. **Cadastrar Turma** (opção 3)
-2. **Cadastrar Aluno** (opção 1) - Vincule à turma criada
-3. **Listar Dados** (opções 4, 5, 6) para visualizar os cadastros
+1. **Acesso** com credenciais válidas
+
+2. **Cadastrar** Turma (opção 3)
+
+3. **Cadastrar** Aluno (opção 1) - Vincule à turma criada
+
+4. **Cadastrar** Professor (opção 2)
+
+5. **Listar Dados** (opções 4, 5, 6) para visualizar os cadastros
 
 ## ⚠️ Observações Importantes
 
+- O sistema valida os dados de acesso antes de liberar o menu
 - Sempre cadastre as turmas antes dos alunos
 - O sistema valida a existência de turmas antes de permitir cadastro de alunos
 - Use IDs numéricos válidos para vincular alunos às turmas
