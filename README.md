@@ -118,10 +118,10 @@ Ao executar o sistema, você irá inserir seus dados:
 ```
 === SISTEMA DE GESTÃO ESCOLAR ===
 === INSIRA SEUS DADOS ===
-Usuário: [seu usuário]
-Email: [seu email]
-Senha: [sua senha]
-Cargo (administrador/gerente/colaborador): [seu cargo]
+Usuário:
+Email: 
+Senha: 
+Cargo (administrador/gerente/colaborador):
 
 ```
 Após isso será liberado o sistema:
